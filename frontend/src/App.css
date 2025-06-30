@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f6fa;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App-header {
+  background: #1565c0;
+  color: #fff;
+  padding: 32px 24px 24px 24px;
+  border-radius: 0 0 16px 16px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(21, 101, 192, 0.1);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.backend-connection {
+  margin-top: 16px;
+  font-weight: bold;
+  color: #ffe082;
+}
+
+.cep-search {
+  background: #fff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.cep-search h2 {
+  margin-top: 0;
+  color: #1565c0;
+}
+
+.cep-search form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cep-search input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #b0bec5;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.cep-search button {
+  background: #1565c0;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cep-search button:hover {
+  background: #003c8f;
+}
+
+.cep-result {
+  background: #e3f2fd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+  color: #0d47a1;
+  font-size: 1rem;
+}
+
+.cep-result p {
+  margin: 6px 0;
+}
