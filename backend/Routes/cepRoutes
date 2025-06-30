@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/:cep', async (req, res) => {
   const { cep } = req.params;
   try {
-    const response = await axios.get(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+    const response = await axios.get(`https://brasilapi.com.br/api/cep/v2/${cep}`);
     res.json(response.data);
   } catch (error) {
     res.status(404).json({ error: 'CEP não encontrado' });

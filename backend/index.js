@@ -9,7 +9,7 @@ app.get('/sua-rota', (req, res) => {
   res.send('Backend conectado com sucesso!');
 });
 
-app.use('/cep/v1', cepRoutes);
+app.use('/cep/v2', cepRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => {

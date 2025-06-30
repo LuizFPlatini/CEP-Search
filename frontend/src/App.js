@@ -7,7 +7,10 @@ function App() {
   const [mensagem, setMensagem] = useState('');
   const [cepData, setCepData] = useState(null);
   const [erroCep, setErroCep] = useState('');
-
+  const latitude = cepData?.location?.coordinates?.latitude;
+  const longitude = cepData?.location?.coordinates?.longitude;
+  const mapsUrl = latitude && longitude ? `https://www.google.com/maps?q=${latitude},${longitude}` : null;
+  
   useEffect(() => {
     axios.get('http://localhost:5000/sua-rota')
       .then(response => setMensagem(response.data))
@@ -32,7 +35,7 @@ function App() {
           setErroCep('');
           setCepData(null);
           try {
-            const response = await axios.get(`http://localhost:5000/cep/v1/${cep}`);
+            const response = await axios.get(`http://localhost:5000/cep/v2/${cep}`);
             setCepData(response.data);
           } catch (error) {
             setErroCep('Erro ao buscar CEP');
@@ -49,8 +52,18 @@ function App() {
             <p><strong>Bairro:</strong> {cepData.neighborhood}</p>
             <p><strong>Cidade:</strong> {cepData.city}</p>
             <p><strong>Estado:</strong> {cepData.state}</p>
+
+            <button className='limpar-button' onClick={() => setCepData(null)}>Limpar</button>
+            <button className='ver-mapa-button' onClick={() => {
+              if (mapsUrl) {
+                window.open(mapsUrl, '_blank');
+              }
+            }}>Ver no mapa</button>
           </div>
+          
+          
         )}
+        
       </div>  
     </div>
   );
